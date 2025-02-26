@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj = new Scanner(System.in);
+        int d, m, reg, r_sum = 0, count = 0;
+        d = obj.nextInt();
+        m = obj.nextInt();
+        reg = obj.nextInt();
+        int[] arr = {0,0,0,0}; 
+        while (reg != 0){
+            int rem = reg % 10;
+            arr[3-count] = rem;
+            r_sum += rem;
+            reg /= 10;
+            count++;
+        }
+        char cond = (r_sum % 2 == 0) ? 'e' : 'o';
+        char mth = ((m >= 3) && (m <= 8)) ? 's' : 'w';
+        switch(cond){
+           case 'o':
+               switch(mth){
+                    case 'w':
+                        System.out.println("Room Number: " + arr[0] + arr[1] + (d % 10));
+                    case 's':
+                        System.out.println("Room Number: " + arr[2] + arr[3] + (m % 10));
+                    }
+            case 'e':
+                System.out.println("Room Number: " + arr[3] + arr[2] + arr[1]);
+               }
+               }
+        }

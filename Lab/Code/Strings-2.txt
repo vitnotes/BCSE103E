@@ -1,0 +1,24 @@
+import java.lang.*;
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		System.out.print("Enter String: ");
+		String str = obj.nextLine().toLowerCase();
+		System.out.print("Enter the character to search: ");
+		String str2 = obj.nextLine().toLowerCase();
+		boolean b = false;
+		for(int i = 0; i < str.length(); i++){
+		    if (str.charAt(i) == str2.charAt(0)){
+		        b = true;
+		    }
+		}
+		if(b == true){
+		    System.out.println("The character is available in the string.");
+	    }
+		else{
+		    System.out.println("The character is not available in the string.");
+		}
+	}
+}

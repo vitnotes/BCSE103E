@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		System.out.print("Enter Number of Rows and Columns: ");
+		int rows = obj.nextInt();
+		int m1[][] = new int[rows][rows];
+		boolean cond = true;
+	    System.out.println("Enter the Matrix Elements: ");
+	    for(int i = 0; i < rows; i++){
+	        for(int j = 0; j < rows; j++){
+	            m1[i][j] = obj.nextInt();
+	        }
+	    }
+	    for(int i = 0; i < rows; i++){
+            for(int j = 0; j<rows; j++){
+                if (i != j)
+                    cond = (m1[i][j] == 0)?true:false;
+                else
+                    cond = (m1[i][j] != 0)?true:false;
+            }
+        }
+        String ans = (cond == true)?"diagonal matrix.":"not a diagonal matrix.";
+        System.out.println("It is "+ans);
+    }
+}
+

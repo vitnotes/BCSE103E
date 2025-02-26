@@ -1,0 +1,69 @@
+import java.util.*;
+class Employee{
+    String name;
+    String code;
+    String emailid;
+    Employee(String name, String code, String emailid){
+        this.name = name;
+        this.code = code;
+        this.emailid= emailid;
+    }
+    public void display(){
+        System.out.println(name);
+        System.out.println(code);
+        System.out.println(emailid);
+    } 
+}
+class Employee_record extends Employee{
+    int ap, hpw, g = 0;
+    Employee_record(String name, String code, String emailid, int ap, int hpw){
+        super(name, code, emailid);
+        this.ap = ap;
+        this.hpw = hpw;
+    }
+    public void grade(){
+        if (ap > 5){
+            g = 1;
+        }
+        System.out.println(g);
+    }
+    public void working_hours(){
+        if (hpw > 50){
+            System.out.println("Applicable for promotion");
+        }
+        else{
+            System.out.println("not to be promoted");
+        }
+    }
+}
+class Onsite extends Employee_record{
+    int exp;
+    Onsite(String name, String code, String emailid, int ap, int hpw, int exp){
+        super(name, code, emailid, ap, hpw);
+        this.exp = exp;
+    }
+    public void dis(){
+        if (exp > 10){
+            System.out.println("not permitted");
+        }
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner obj = new Scanner(System.in);
+		String name, code, emailid; 
+		int ap, hpw, exp;
+		name = "Rahul";
+		code = "21BME";
+		emailid = "rahul@example.com";
+		ap = 7;
+		hpw = 75;
+		exp = 15;
+		Onsite o1 = new Onsite(name, code, emailid, ap, hpw, exp);
+		o1.display();
+		o1.grade();
+		o1.working_hours();
+		o1.dis();
+	}
+}

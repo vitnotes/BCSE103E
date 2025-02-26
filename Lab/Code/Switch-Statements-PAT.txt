@@ -1,0 +1,53 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner obj = new Scanner(System.in);
+        long l = obj.nextLong();
+        String city = obj.next();
+        int count = 0;
+        int first5 = 0;
+        int last5 = 0;
+        long[] arr = new long[10];
+        while (l > 0) {
+            long remainder = l % 10;
+            if (count <= 4){
+                last5 += remainder;
+                arr[9-count] = remainder;
+            }
+            else{
+                first5 += remainder;
+                arr[9-count] = remainder;
+            }
+            l = l / 10;
+            count++;
+        }
+        System.out.println(first5);
+        System.out.println(last5);
+        if ((first5 % 2 == 0) && (last5 % 2 ==0)){
+            System.out.println("Password is "+arr[6]+arr[7]+arr[8]+arr[9]);
+        }
+        else if ((first5 % 2 != 0) && (last5 % 2 !=0)){
+            System.out.println("Password is "+arr[1]+arr[3]+arr[6]+arr[8]);
+        }
+        else{
+            switch (city){
+                case "Tamilnadu":
+                    System.out.println("Password is 1122");
+                    break;
+                case "Kerala":
+                    System.out.println("Password is 8899");
+                    break;
+                case "Punjab":
+                    System.out.println("Password is 3050");
+                    break;
+                case "Haryana":
+                    System.out.println("Password is 6621");
+                    break;
+                default:
+                    System.out.println("Password is 5511");
+                    break;
+            }
+        }
+        }
+        
+    }

@@ -1,0 +1,8 @@
+public class Main{
+    public static void main (String[] args) {
+        int[] num = {10, 25, 220, 135, 255};
+        for(int x:num){
+            System.out.println(x/10);
+        }
+    }
+}
